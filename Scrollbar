@@ -1,0 +1,99 @@
+
+
+html
+{
+    overflow: hidden;
+    height: 100%;
+}      
+
+div[role="main"]
+{
+    overflow-y: scroll;
+    margin: 0;
+    bottom: 225px;
+    /*height:auto;*/
+    /*height: -webkit-calc(100% - 9800px);*/
+    /*max-height:615px;*/
+    /*margin-top:auto;*/
+    /*margin-bottom:2000px;*/
+    /*padding-bottom:2000px;*/
+    /*padding-bottom:3200px;
+    margin-bottom:2200px;*/
+}
+
+section {
+    width:70%;
+    /*min-height:100%;*/
+    float:left;
+    height:auto;
+    max-height:100%;
+    /*margin-bottom:500px;*/
+    /*padding:10px;*/
+}
+aside {
+    /*padding: 150px,50px,10px, 550px;*/
+    width:30%;
+    padding-left: 15px;
+    /*padding-top : 10px;*/
+    float: left;
+     display: block;
+}
+
+body { /*padding-top: 52px;*/ 
+      
+
+
+
+.form-control{
+    padding-top:0em;
+    padding-bottom:0em;
+}
+      </style>
+   </head>
+<body ng-app="emstApp">
+
+        <!-- PAGE CONTENT -->
+    </div>
+        <div onload="SetHeight()" role="main" id="mainId" style="border: 1px solid red" class="container">
+            <div ui-view></div>
+        </div>
+
+
+        <!-- inject our views using ng-view -->
+        <!-- each angular controller applies a different class here -->
+        <!-- END PAGE CONTENT -->
+        <!--  PAGE FOOTER -->
+        <footer style="margin-top:25px;">
+            <div class="container-fluid">
+                <p class="text-muted">&copy; Some Footer</p>
+            </div>
+        </footer>
+        <!-- END PAGE FOOTER -->
+        <script type="textFOOTERjavascript">
+            var brwsr = navigator.browserInfo;
+            if (brwsr.search("Chrome") < 0 && brwsr !== "IE 11") alert("This UI has been tested on Chrome and IE 11, but not with " + brwsr);
+        </script>
+        <!-- ====================CORE JAVASCRIPT============================-->
+
+        <script type="text/javascript">
+            //var divHeight = $(window).height() * 62 / 100 + 400;
+            //$("mainId").css("max-height", divHeight);
+
+            function SetHeight() {
+                var h = $(window).height();
+                $("#mainId").height(h - 95);
+            }
+
+            $(document).ready(SetHeight);
+            $(window).resize(SetHeight);
+
+            $(document).ready(function () {
+                $('.datepicker').datepicker();
+            });
+            $(document).ready(function () {
+                $('.timepicker').timepicker();
+            });
+        </script>
+        <!-- END Angular Bootstrap core JavaScript-->
+        <!-- ====================Application JavaScript============================-->
+        
